@@ -1,0 +1,196 @@
+/* Start Global Rules */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: rgb(255 80 32);
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration-line: none;
+}
+
+input,
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  caret-color: var(--main-color);
+}
+
+section {
+  padding: 60px 0;
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+/* End Global Rules */
+
+/* Start Sign Up Section */
+.sign-up .container {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+}
+
+.sign-up .container .content {
+  width: calc(100% - 560px);
+  animation: loadFromLeft .8s linear forwards;
+}
+
+.sign-up .container .content form {
+  display: grid;
+  gap: 18px;
+}
+
+.sign-up .container .content form .buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sign-up .container .content form .check {
+  display: flex;
+  gap: 15px;
+}
+
+.sign-up .container .content form .check input {
+  accent-color: var(--main-color);
+}
+
+.sign-up .container .image {
+  width: 440px;
+  animation: loadFromBottom .8s linear forwards;
+}
+
+.sign-up .container .image img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  .sign-up .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .sign-up .container .content {
+    width: 100%;
+  }
+
+  .sign-up .container .content h2 {
+    margin: 0 auto 30px;
+  }
+
+  .sign-up .container .content .buttons,
+  .sign-up .container .content .check {
+    justify-content: center;
+  }
+
+  .sign-up .container .image {
+    width: 100%;
+  }
+}
+
+/* End Sign Up Section */
+/* Start Login Section */
+.log-in .content {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.log-in .content :where(h2, input, button, .other-login-ways, a, p) {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(60px);
+  animation: appear .5s linear forwards;
+}
+
+.log-in .content h2 {
+  margin: 0 auto 30px;
+}
+
+.log-in .content form {
+  display: grid;
+  gap: 18px;
+}
+
+.log-in .content form input:first-of-type {
+  animation-delay: .2s;
+}
+
+.log-in .content form input:last-of-type {
+  animation-delay: .4s;
+}
+
+.log-in .content form button {
+  margin: 0 auto;
+  animation-delay: .6s;
+}
+
+.log-in .content .other-login-ways {
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+  margin-top: 30px;
+  display: grid;
+  gap: 20px;
+  animation-delay: .8s;
+}
+
+.log-in .content .other-login-ways>a {
+  background-color: #fff;
+  padding: 13px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+  position: relative;
+  top: 0;
+  transition: all .3s linear;
+}
+
+.log-in .content .other-login-ways>a:hover {
+  box-shadow: 0 3px 10px 0 #f4f4f4;
+  top: -5px;
+}
+
+.log-in .content .other-login-ways>a:last-of-type {
+  animation-delay: 1s;
+}
+
+.log-in .content .other-login-ways p {
+  animation-delay: 1.2s;
+}
+
+.log-in .content .other-login-ways p a {
+  color: var(--main-color);
+  font-weight: bold;
+  transition: color 0.3s linear;
+}
+
+.log-in .content .other-login-ways p a:hover {
+  color: #333;
+}
+
+/* End Login Section */
